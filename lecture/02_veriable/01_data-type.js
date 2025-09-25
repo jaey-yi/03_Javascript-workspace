@@ -94,6 +94,7 @@ srt = `백틱으로 감싼 문자열의 "" '' 는 문자열 데이터로 취급 
 console.log(str, typeof(str));
 
 
+
 /*
   * 템플릿 리터럴 
   1. ES6부터 도입된 멀티라인 문자열
@@ -211,3 +212,9 @@ test =1;
 console.log(typeof(test));
 test = "안녕";
 console.log(typeof(test));
+
+// 결론 : 문자열 str , 숫자 num , 변수선언 var / let / const , 텍스트 + 변수 : `${변수}` , 
+          // 기타 : 논리 , undefined(var 초기화), null , 
+          // 객체 타입 : object , symbol (중복 불가 - 유용함)
+          // 동적 타입언어(JavaScript, Python) - 변수 타입 선언 - 변경 불가,신뢰성 높고 유연성 떨어짐
+          // 정적 타입언어(C, C++, Java, Kotlin) - 변수 타입 없음 - 변경 가능,신뢰성 낮고 유연성 높음 
