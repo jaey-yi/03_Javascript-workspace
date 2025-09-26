@@ -103,7 +103,7 @@
 */
 
 // 결론 : Json = 문자기준, 자바스크립트 객체를 문자로 나열한 표기법
-// JSON.parse(text)
+// JSON.parse(text) : JSON 문자열 을 배열로
 //JSON.stringify(value) : 객체-값 을 JSON 문자열로
 
 
@@ -116,5 +116,5 @@ const product = {
 
 console.log(JSON.stringify(product));
 
-const productStr = {"name":"마우스","brand":"로지텍","price":50000,"model":["G304","MX Master"]};
+const productStr = JSON.stringify(product);
 console.log(JSON.parse(productStr));

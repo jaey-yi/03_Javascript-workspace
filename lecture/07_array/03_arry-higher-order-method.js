@@ -91,12 +91,6 @@ nums
    
 
 
-//결론 오름차순 정렬 : 
-// .map( (item) => 가공처리) : 배열 내용에 가공처리 후 새 배열 
-// .filter((item) => 조건문 ) : 조건문으로 필터링 후 새 배열 
-// .forEach((item) => 하나씩 할 동작) : 동작을 item 을 대상으로 하나씩 실행함
-//..sort((item1,item2) => item2 -item1) : 내림차순
-//.sort((item1,item2) => item1- item2): 오름차순
 
 
 const students = [
@@ -106,8 +100,16 @@ const students = [
 ];
 
 
+
 const result = 
     students.map((student) => `<li id ="student${student.id}">이름 :${student.name}, 나이:${student.age}</li>`)
             .join("");
 
 console.log(result);
+
+//결론 오름차순 정렬 : 
+// .map( (item) => 가공처리) : 배열 내용에 가공처리 후 새 배열 
+// .filter((item) => 조건문 ) : 조건문으로 필터링 후 새 배열 
+// .forEach((item) => 하나씩 할 동작) : 동작을 item 을 대상으로 하나씩 실행함
+//..sort((item1,item2) => item2 -item1) : 내림차순
+//.sort((item1,item2) => item1- item2): 오름차순
