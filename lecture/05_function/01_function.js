@@ -29,6 +29,8 @@
     3. 화살표 함수
     */ 
 
+
+
 /**
  * 📌 함수 선언식 (function declaration)
  * 1. 함수 이름을 결정해서 함수를 정의하는 방식 (기명함수)
@@ -171,3 +173,7 @@ function printMessage(name){
 }
 
 printMessage()
+
+// 결론 : 함수 - 블럭 , 자신만의 범위 (scope), 하나의 값으로 취급. 
+// 함수 선언 - const 변수명 = funsction([매개변수]){실행구문,  return 결과}; , 호출 - 변수명([인자값]);
+// 매개변수 ???

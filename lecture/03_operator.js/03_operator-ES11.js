@@ -38,3 +38,8 @@ console.log(input);
 let str = null;                
 console.log(str &&str.length);  //1) legth 프로퍼티에 바로 접근 : null 일 경우 오류 발생
 console.log(str?.length); //2) 단축평가 (&&) 사용 : 빈 문자열 falusy 취급 > length 0
+
+
+// 결론 : 메소드 - 구조 분해 할당 가능 . 
+// null 병합 연산 - ?? : 좌항값이 null 또는 undefined 일때 우항 반환됨
+// 단, ?? 사용시 0 데이터를 유의미한 값으로 판별

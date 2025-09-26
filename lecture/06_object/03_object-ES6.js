@@ -36,10 +36,29 @@ const car = {
 
 const car2 = {maker: 'kia', model: 'kona', year: 2025};
 console.log(car2);
+   
 /*
   * 메소드 단축 
   ES6에서는 객체 내의 메소드 정의시 function 키워드를 생략한 축약 표현을 사용할 수 있음
 */
+
+let dog1 = {
+  name: '뽀삐',
+  eat : function(food){
+
+  }
+
+};
+
+let dog2 = {
+  name: '두부',
+  eat(food){
+    //메소드 단축 구문
+  }
+}
+
+// 결론 : 구조 분해 할당이 가능하다. {key : value,} , 
+
 
 
 

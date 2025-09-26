@@ -61,12 +61,12 @@ const fnExp4 = function(x,y){
 const fnArrow4 = (x,y) => x+y; //return 생략 가능~
 
 
-//결론 -  화살표 함수 : const 함수명 =(입력값)=>{실행문} >> 단일 실행문, 중괄호 생략 가능  
-//                      const 함수명 =(입력값)=>{실행문} >> 
+//결론 - 화살표 함수 : const 함수명 =(입력값)=>{실행문} >> 단일 실행문- 중괄호 생략 가능, return 안써도됨
+//       
 
 const fnArrow5 = (x,y) => {
   console.log("화살표 함수")
-  x+y
+  return x+y
 
 
 };

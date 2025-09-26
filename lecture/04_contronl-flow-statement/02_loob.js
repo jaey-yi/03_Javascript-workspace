@@ -77,3 +77,5 @@ for(let i=0; i<fruit.length; i++){
   console.log(fruit.charAt(i))
 
 }
+
+// 결론 : 반복문 - while / do-while (초기 작동 do 먼저 넣기), for(초기식, 조건식, 증감식) 

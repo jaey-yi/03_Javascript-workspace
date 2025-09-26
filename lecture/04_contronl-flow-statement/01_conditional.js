@@ -71,3 +71,5 @@ switch(command){
   default:
     console.log("뭐라고 인사해야할까");
 }
+
+// 결론 : 조건문 - if , for , switch

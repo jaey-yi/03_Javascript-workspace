@@ -64,3 +64,6 @@ if(true)console.log('if(false)');
 
 if(undefined) console.log('if(undefined)');
 if(null) console.log('if(null)'); 
+
+
+// 결론 : 타입변환 : 암묵적 (문자열+순자형 변환, 논리타입값 구분)  / 명시적(string 생성자 함수, toString 등 )

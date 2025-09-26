@@ -16,7 +16,7 @@
 // 로딩 중 상태 일 경우 "로딩 중 입니다." 출력
 
 let isLoading = true;
-isLoading && console.log('로딩 중 입니다'); //&&연산자의 좌항의 결과가 **ture** 일 때 뒤쪽 구문 실행 이용
+isLoading && console.log('로딩 중 입니다'); //
 
 //사용자 입력값이 존재할 경우 해당 값 출력
 let input = '';
@@ -29,3 +29,7 @@ input && console.log(`사용자 입력값 ${input}`);
 
 let userCountry = '' || '입력안됨'
 console.log(userCountry);
+
+// 결론 연산자 이용, 조건문 간단하게 만들기
+// &&연산자의 좌항의 결과가 **ture** 일 때 뒤쪽 구문 실행 이용
+// /변수 = 입력값 || default 값

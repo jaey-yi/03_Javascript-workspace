@@ -38,7 +38,7 @@ const student2 = {
     return `${this.name}은 ${this.age}세 입니다.`
   }
 };
-*/// 같은 내용의 함수를 여러개 만들 때 생성자 함수를 이용해서 찍어내기
+*/
 
 function Student(name,age){
   this. name = name;
@@ -53,3 +53,8 @@ function Student(name,age){
 const studetn1 = new Student('유관순', 20);
 
 console.log(studetn1);
+
+// 결론 :  같은 내용의 함수를 여러개 만들 때 New 생성자 함수를 이용해서 찍어내기
+//         예시-  const studetn1 = new Student('유관순', 20);
+
+ 
