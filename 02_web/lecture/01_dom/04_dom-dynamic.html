@@ -23,7 +23,8 @@
 
   <script>
     function createNode() {
-      document.querySelector("#drink").innerHTML += "<H4>콜라</H4>" //덮어씌우기
+      //document.querySelector("#drink").innerHTML += "<H4>콜라</H4>" //덮어씌우기
+      document.querySelector("#drink").insertAdjacentHTML("beforeend","<H4>콜라</H4>" ) //노드 생성 추가
     }
 
   </script>
@@ -36,6 +37,11 @@
   
   <script>
     function createVoidNode() {
+      const $imgElement = document.createElement("img");
+      $imgElement.src = "../../assets/images/animal1.jpg";
+      $imgElement.width =200; 
+
+      document.querySelector("#img-container").appendChild($imgElement);
       
     }
   </script>
@@ -50,7 +56,28 @@
 
   <script>
     function createMultipleNodes() {
+      const foodList = ["된장찌개", "고등어구이", "순대국"];
+
+      //배열 내 요소 갯수만큼 리페인트가 됨(3회) => 비효율
+      /*
+      foodList.forEach((food) => {
+        const $liElement = document.createElement("li");
+        $liElement.innerText = food;
+        document.querySelector("#food").appendChild($liElement);
       
+      });
+       */
+
+      
+      // 가상의 노드 이용=> 리페인트 1회
+      const fragment = document.createDocumentFragment(); //여러 객체 추가 가능한 가상의 노드
+      foodList.forEach((food) => {
+        const $liElement = document.createElement("li");
+        $liElement.innerText = food;
+        fragment.appendChild($liElement);
+      });
+      document.querySelector("#food").appendChild(fragment);
+       
     }
   </script>
 
@@ -90,6 +117,13 @@
 
   <script>
     function cloneNodeTest() {
+      const $shallowClone = document.querySelector("#copy").cloneNode(); // 얕은 복사
+      console.log($shallowClone); //ul 요소 노드만 복제되고 내부 텍스트. 내보 요소노드는 없음
+      const $deepClone = document.querySelector("#copy").cloneNode(true);
+      console.log($deepClone);
+
+      document.querySelector("#copy-result").appendChild($deepClone);
+
       
     }
   </script>
@@ -106,6 +140,8 @@
 
   <script>
     function replaceNodeTest() {
+      const $replace =document.querySelector("#replace");
+      $replace.replaceChild(document.querySelector("#copy"), $replace.firstElementChild);
       
     }
   </script>
@@ -137,6 +173,7 @@
 
   <script>
     function removeNodeTest() {
+      document.querySelector("#item2").remove();
 
     }
   </script>

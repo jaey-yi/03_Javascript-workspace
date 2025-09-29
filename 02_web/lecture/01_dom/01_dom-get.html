@@ -150,13 +150,21 @@
 
   <script>
     function getNodeById() {
+      //아이디 areaq 인 요소 dom 객체로 취득 (중복된 id 요소 중 첫번째 만 반환함)
+      const area1EL = document.getElementById('area1');
+      console.log(area1EL);
+
+      console.log(document.getElementById('area2'));
       
+      console.log(document.getElementById('test')); //없는 id 제시 => null 반환
+
+
     }
   </script>
 
   <hr>
 
-  <h2>tag를 이용한 요소 노드 취득</h2>
+  <h2>tag를 이용한 요소 노드 취득</h2> 
 
   <h5>김치찌개</h5>
   <h5>된장찌개</h5>
@@ -172,6 +180,23 @@
 
   <script>
     function getNodeByTagName() {
+      // h5 태그들의 요소 취득
+      const h5List = document.getElementsByTagName("h5");
+      console.log(h5List); //유사배열
+      console.log(h5List.length);
+
+      //for 문 이용
+      /*
+      for(let i=0; i<h5List.length; i++){
+        h5List[i].style.background = "red";
+      }*/
+      //배열 forEach 이용
+      Array.from(h5List).forEach( (h5) => {
+        h5.style.backgroundcolor = "red";
+      })
+      
+      //id  선택 drink > tadName 으로 li 선택
+      console.log(document.getElementById('drink').getElementsByTagName('li'));
 
     }
   </script>
@@ -194,6 +219,15 @@
 
   <script>
     function getNodeByClassName() {
+      //클래스가 drink 인 요소 선택
+      const drinks = document.getElementsByClassName('drink');
+      console.log(drinks);
+
+      //array 객체로 변환 후 forEach
+      [...drinks].forEach((drinks) => 
+      {drink.style.color = "red";
+
+      })
 
     }
   </script>
@@ -213,6 +247,16 @@
 
   <script>
     function getNodeBySelector() {
+      const spanEl = document.querySelector(".area>span");
+      console.log(spanEl);
+      
+      const secondEl = document.querySelector(".area>.second");
+      console.log(secondEl);
+
+      spanEl.style.backgroundColor = "gray";
+      secondEl.style.backgroundColor = "pink";
+
+
 
     }
   </script>
@@ -229,6 +273,12 @@
   <script>
     function getNodeBySelectorAll() {
 
+      const list = document.querySelectorAll("#list>li");
+      console.log(list); //유사배열 (Nodelist)
+
+      list.forEach((li) => {
+        li.style.backgroundColor = "gray";
+      })
     }
   </script>
 
