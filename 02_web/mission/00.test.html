@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="menu">
+    <li class="item">메뉴1</li>
+    <li class="item">메뉴2</li>
+    <li class="item">메뉴3</li>
+  </ul>
+
+<script>
+  const list1 = document.querySelectorAll("#menu>li");
+  console.log(list1);
+
+  const list2 = document.getElementsByClassName("item");
+  console.log(list2);
+
+  const list3 = document.querySelector(".item");
+  console.log(list3);
+  
+  
+//2번문제 
+const byClass = document.getElementsByClassName('item');  //=>
+const byQuery = document.querySelectorAll('.item'); // =>
+
+console.log('byClass 길이:', byClass.length); //=> 3
+console.log('byQuery 길이:', byQuery.length); //=>3 
+
+// 첫 번째 li 요소 제거
+document.querySelector('.item').remove();
+
+console.log('제거 후 byClass 길이:', byClass.length); //2 getElementsByClassName은 Live HTMLCollection이라 DOM 변경이 실시간 반영되고,
+console.log('제거 후 byQuery 길이:', byQuery.length); // 3 querySelectorAll은 Static NodeList라 처음 호출한 시점의 상태를 유지함.
+
+
+
+// 3번문제/
+/*
+다음 HTML에서 "메뉴2"가 들어있는 li 요소를 기준으로, JavaScript로 다음을 찾아봐:
+html<ul id="menu">
+  <li>메뉴1</li>
+  <li>메뉴2</li>
+  <li>메뉴3</li>
+</ul>
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const menu2 = Array.from(document.querySelectorAll("li")).find(li =>li.textContent.trim()==='메뉴2');
+
+console.log(menu2.previousElementSibling);
+console.log(menu2.nextElementSibling);
+console.log(menu2.parentElement);
+
+
+
+
+주의: nextSibling이 아닌 nextElementSibling을 써야 하는 이유도 설명해봐. // > 텍스트 노드 를 건너띠고 다음순서의 HTML 요소 노드를 정확하게 선택하기 때문
+<div id="content">
+  <strong>기존 내용</strong>
+</div>
+<button onclick="test()">실행</button>
+
+<script>
+function test() {
+  const div = document.querySelector('#content');
+  
+  console.log('innerHTML:', div.innerHTML); => strong
+  console.log('innerText:', div.innerText); => 기존내용
+  
+  // 변경해보기
+  div.innerHTML = '<h3>HTML로 변경</h3>';  => div.innerText =
+  // div.innerText = '<h3>텍스트로 변경</h3>';
+  
+}
+*/
+</script>
+
+
+
+
+
+
+</script>
+</body>
+</html>

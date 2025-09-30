@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>
-    const $ = (selector) =>document.querySelector(selector); // ==$("선택자")
-  </script>
-</head>
-<body>
-
-  <!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const $ = (selector) => document.querySelector(selector); // ==$("선택자")
+    </script>
+  </head>
+  <body>
+    <!-- 
     📌 이벤트 (Event)
     1. DOM 객체에서 발생하는 어떤 시그널을 의미함 
     2. 시스템에 일어나는 사건(Action) 또는 발생(Occurrence)을 의미함 
@@ -27,10 +26,9 @@
       1) 고전 이벤트 모델
       2) 표준 이벤트 모델
       3) 인라인 이벤트 모델
-  --> 
+  -->
 
-
-  <!-- 
+    <!-- 
     * 고전 이벤트 모델 
     1. 이벤트 할당을 위해서 이벤트 핸들러 프로퍼티(Event Handler Property)를 활용하는 방법
     2. 이벤트 종류 앞에 "on" 키워드를 붙이면 이벤트 핸들러 프로퍼티가 완성됨 
@@ -46,34 +44,32 @@
           요소.onclick = eventHandler;
   -->
 
-  <h2>고전 이벤트 모델 방식</h2>
+    <h2>고전 이벤트 모델 방식</h2>
 
-  <button id="btn1">고전이벤트모델1</button>
-  <button id="btn2">고전이벤트모델2</button>
-  <button id="btn3">고전이벤트모델3</button>
+    <button id="btn1">고전이벤트모델1</button>
+    <button id="btn2">고전이벤트모델2</button>
+    <button id="btn3">고전이벤트모델3</button>
 
-  <script>
-    // 익명함수 ?
-    document.querySelector("#btn1").onclick = function(){
-      console.log("btn1 클릭");
-    }
-    document.querySelector("#btn1").onclick = function(){
-      alert("btn1클릭");
-    }
+    <script>
+      // 익명함수 ?
+      document.querySelector("#btn1").onclick = function () {
+        console.log("btn1 클릭");
+      };
+      document.querySelector("#btn1").onclick = function () {
+        alert("btn1클릭");
+      };
 
-    // 화살표 함수
-    document.querySelector("#btn2").onclick = () => {
-      console.log("bnt2 클릭");
-      document.querySelector("btn1").onclick = null;
+      // 화살표 함수
+      document.querySelector("#btn2").onclick = () => {
+        console.log("bnt2 클릭");
+        document.querySelector("btn1").onclick = null;
+      };
+      //기명함수
+    </script>
 
-    }
-    //
+    <hr />
 
-  </script>
-
-  <hr>
-
-  <!-- 
+    <!-- 
     * 인라인 이벤트 모델 
     1. HTML 요소에 직접 이벤트 핸들러 속성(Event Handler Attribute) 등록하고 이벤트 핸들러를 호출하는 방식
     2. 이벤트 핸들러 작성시 주로 기명 함수를 사용함 
@@ -84,18 +80,19 @@
        }
   -->
 
-  <h2>인라인 이벤트 모델 방식</h2>
+    <h2>인라인 이벤트 모델 방식</h2>
 
-  <button onclick="inlineModel();">인라인이벤트모델</button>
+    <button onclick="inlineModel();">인라인이벤트모델</button>
 
-  <script>
-    
-  </script>
+    <script>
+      function inlineModel() {
+        console.log("inlineModel 함수 실행");
+      }
+    </script>
 
-  <hr>
+    <hr />
 
-
-  <!-- 
+    <!-- 
     * 표준 이벤트 모델 
     1. W3C에서 공식적으로 지정한 웹 표준의 이벤트 모델 방식 (최신 브라우저에서 다 지원)
     2. EventTarget 인터페이스의 addEventListener() 메소드를 호출하는 방식
@@ -110,27 +107,26 @@
         요소.addEventListener('click', eventHandler);
   -->
 
-  <h2>표준 이벤트 모델 방식</h2>
+    <h2>표준 이벤트 모델 방식</h2>
 
-  <button id="btn4">표준이벤트모델1</button>
-  <button id="btn5">표준이벤트모델2</button>
-  <button id="btn6">표준이벤트모델3</button>
+    <button id="btn4">표준이벤트모델1</button>
+    <button id="btn5">표준이벤트모델2</button>
+    <button id="btn6">표준이벤트모델3</button>
 
-  <script>
-    $("#btn4").addEventListener("click", function(){
-      console.log("btn4 클릭");
-    });
+    <script>
+      $("#btn4").addEventListener("click", function () {
+        console.log("btn4 클릭");
+      });
 
-    $("#btn4").addEventListener("click", function(){
-      alert("btn4 클릭");
-    })
+      $("#btn4").addEventListener("click", function () {
+        alert("btn4 클릭");
+      });
 
-    $("#btn5").addEventListener("mouseenter", () =>{
-      console.log("btn5 에 마우스 들어감");
-    })
+      $("#btn5").addEventListener("mouseenter", () => {
+        console.log("btn5 에 마우스 들어감");
+      });
 
-    $("#btn6").addEventListener("dbclick", action);
-  </script>
-
-</body>
+      $("#btn6").addEventListener("dbclick", action);
+    </script>
+  </body>
 </html>
