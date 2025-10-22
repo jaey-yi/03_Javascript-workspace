@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      {
+        // * 배열에서의 전개 구문
+        const nums = [1, 2, 3, 4, 5];
+        console.log(nums);
+        console.log(...nums);
+
+        // 배열 연결
+        const newNums = [...nums, 6, 7, 8, 9, 10]; //** 중요
+        console.log(newNums);
+      }
+      {
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        const newArr = [...arr1, ...arr2];
+      }
+      {
+        const user = {
+          name: "홍길동",
+          age: 20,
+          address: "서울시 강남구",
+        };
+        //객체 복사 및 연결
+        const newUSer = {
+          ...user,
+          dream: "프론트엔드개발자",
+          hobby: "프로그래밍",
+        };
+        console.log(newUSer);
+
+        //*객체 병합
+        const vehicle = {
+          brand: "Ford",
+          model: "Nustang",
+          color: "red",
+        };
+        const updateVehicle = {
+          type: "car",
+          color: "yellow",
+        };
+
+        const myUpdateVehicle = {
+          ...vehicle,
+          ...updateVehicle,
+        };
+        console.log(myUpdateVehicle); //병합시 기존객체 유지 + 특정 값 변경
+
+        const car = {
+          brand: "BMW",
+          model: "X3",
+          color: "black",
+        };
+        const newCar = {
+          //*변경시 값 변경 특성 이용
+          ...car,
+          model: "X5",
+        };
+        console.log(newCar);
+      }
+    </script>
+  </body>
+</html>

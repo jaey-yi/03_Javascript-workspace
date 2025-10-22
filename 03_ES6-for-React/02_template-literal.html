@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      {
+        //일반문자열(따옴표) - 문자열 내 줄바꿈 허용 x
+        //const element = '<ul>
+        //  </ul>'
+        //백틱 - 문자열 내 줄바꿈 허용
+        const element = `
+      <ul>
+        <li>목록1</li>
+      </ul> 
+      `;
+        const name = "이재희";
+        const age = 28;
+
+        // 일반 문자열
+        const message1 = "저는" + name + "입니당~" + age + "살 입니다";
+        // 템플릿 문자열 - 문자열 조합 편리
+        const meassage2 = `저는 ${name} 입니다 ${age - 1} 살 입니당`;
+      }
+    </script>
+  </body>
+</html>

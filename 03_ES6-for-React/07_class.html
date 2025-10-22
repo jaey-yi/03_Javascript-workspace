@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //객체 생성 방법 1. 객체 리터럴
+      {
+        const person = {
+          name: "홍길동",
+          age: 20,
+          getInfo: function () {
+            return `${this.name}은 ${this.age}세 입니다`;
+          },
+        };
+
+        //객체 생성 방법 2. new 이용
+        console.log(person.age);
+        {
+          function person(name, age) {
+            this.name = name;
+            this.age = age;
+            //메소드
+            this.getInfo = function () {
+              return `${this.name}- ${this.age}세 입니다`;
+            };
+          }
+
+          const person1 = new person("홍길동", 20);
+          const person2 = new person("이재희", 28);
+
+          console.log(person2.getInfo());
+        }
+
+        {
+          //객체 생성 방법 3. class 활용
+          class Person {
+            // 생성자 정의
+            constructor(name, age) {
+              (this.name = name), (this.age = age);
+            }
+            // 메소드 정의
+            getInfo() {
+              return `${this.name}`;
+            }
+          }
+          const person1 = new Person("홍길자", 56); //생성자 실행됨 ?? 프로토타입에 메소드가 할당됨
+
+          //*class 이용한 상속
+          // Person 클래스(name, age, getInfo())를 상속받는 Student 강의
+          class student extends Person {
+            constructor(name, age, dream) {
+              super(name, age);
+
+              this.dream = dream;
+            }
+            study() {
+              return `${this.name}은 ${this.dream} 을 위해 공부중 입니다.`;
+            }
+          }
+          const student1 = new student("김지니", 21, "리액트 개발자");
+          console.log(student1);
+          console.log(student1.study());
+        }
+      }
+    </script>
+  </body>
+</html>

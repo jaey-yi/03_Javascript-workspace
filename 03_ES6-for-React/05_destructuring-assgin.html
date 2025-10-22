@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      {
+        //*배열 구조분해 할당 - 배열을 분해한 다음 변수로 할당하기
+        const fruits = ["사과", "바나나", "딸기"];
+        const [a, b, c] = fruits;
+
+        console.log(a, b, c);
+
+        const vehicles = ["머스탱", "f-150", "expedition"];
+        const [car, , suv] = vehicles;
+        console.log(car, suv);
+
+        const [sportscar, ...cars] = vehicles; //**
+        console.log(cars);
+        //함수에서 다수의 데이터 반환
+        function cals(a, b) {
+          const add = a + b;
+          const subtract = a - b;
+          const multiply = a * b;
+          const divide = a / b;
+
+          return [add, subtract, multiply, divide];
+        }
+        const [add, sub, mul, div] = cals(5, 7);
+        console.log(cals(4, 5));
+        console.log(add, sub, mul, div);
+        console.log("==========================");
+      }
+      {
+        const car = {
+          maker: "BMW",
+          model: "X3",
+          year: 2025,
+        };
+
+        const { maker: brand, model: name, year: number } = car;
+        console.log(brand, name);
+        /*
+        function myCarInfo(mycar){
+          const {maker, model} = mycar;  
+          const message = `My car is ${maker} ${brand}`
+          console.log(message);
+        }
+        */
+
+        function myCarInfo({ maker, model }) {
+          //함수 선언 하면서 바로 구조분해할당 가능
+          const message = `My car is ${maker} ${brand}`;
+          console.log(message);
+        }
+      }
+    </script>
+  </body>
+</html>
